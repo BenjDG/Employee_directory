@@ -8,12 +8,12 @@ jobs:
       deploy:
         runs-on: ubuntu-latest
         steps:
-          - run: yarn run build
           - uses: actions/checkout@v2
           - uses: actions/setup-node@v1
             with:
               node-version: 12
           - run: yarn install --frozen-lockfile
+          - run: yarn run build
           - uses: akhileshns/heroku-deploy@v3.7.8 # This is the action
             with:
               heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
