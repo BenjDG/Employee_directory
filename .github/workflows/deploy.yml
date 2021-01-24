@@ -5,16 +5,17 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      - uses: akhileshns/heroku-deploy@v3.7.8 # This is the action
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} #Must be unique in Heroku
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - run: yarn run build
+          - uses: actions/checkout@v2
+          - uses: actions/setup-node@v1
+            with:
+              node-version: 12
+          - run: yarn install --frozen-lockfile
+          - uses: akhileshns/heroku-deploy@v3.7.8 # This is the action
+            with:
+              heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+              heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} #Must be unique in Heroku
+              heroku_email: ${{ secrets.HEROKU_EMAIL }}
