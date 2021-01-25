@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import API from '../../utils/API.js';
+import API from '../utils';
 
-class List extends Component {
+class Directory extends Component {
   componentDidMount () {
     API.GetRandomPerson()
       .then(res => console.log(res))
@@ -17,4 +17,4 @@ class List extends Component {
   }
 }
 
-export default List;
+export default Directory;

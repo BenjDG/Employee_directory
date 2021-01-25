@@ -1,11 +1,10 @@
 import React from 'react';
-import List from './components/List';
+import Directory from './pages';
 
 function App () {
   return (
     <div>
-      <h1>What is up?</h1>
-      <List />
+      <Directory />
     </div>
   );
 }
