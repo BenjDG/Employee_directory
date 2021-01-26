@@ -1,0 +1,165 @@
+{
+  "results": [
+      {
+          "name": {
+              "title": "Mr",
+              "first": "Raymond",
+              "last": "Lawson"
+          },
+          "location": {
+              "street": {
+                  "number": 876,
+                  "name": "Dogwood Ave"
+              },
+              "city": "Beaumont",
+              "state": "Vermont",
+              "country": "United States",
+              "postcode": 19893,
+              "coordinates": {
+                  "latitude": "-51.3153",
+                  "longitude": "-89.8903"
+              },
+              "timezone": {
+                  "offset": "-11:00",
+                  "description": "Midway Island, Samoa"
+              }
+          },
+          "email": "raymond.lawson@example.com",
+          "picture": {
+              "large": "https://randomuser.me/api/portraits/men/37.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/37.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/37.jpg"
+          }
+      },
+      {
+          "name": {
+              "title": "Mr",
+              "first": "Terrence",
+              "last": "Jimenez"
+          },
+          "location": {
+              "street": {
+                  "number": 8338,
+                  "name": "Valwood Pkwy"
+              },
+              "city": "Aurora",
+              "state": "Indiana",
+              "country": "United States",
+              "postcode": 28989,
+              "coordinates": {
+                  "latitude": "35.8493",
+                  "longitude": "-143.3232"
+              },
+              "timezone": {
+                  "offset": "+8:00",
+                  "description": "Beijing, Perth, Singapore, Hong Kong"
+              }
+          },
+          "email": "terrence.jimenez@example.com",
+          "picture": {
+              "large": "https://randomuser.me/api/portraits/men/95.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/95.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/95.jpg"
+          }
+      },
+      {
+          "name": {
+              "title": "Mr",
+              "first": "Ramon",
+              "last": "Edwards"
+          },
+          "location": {
+              "street": {
+                  "number": 5476,
+                  "name": "Northaven Rd"
+              },
+              "city": "Pompano Beach",
+              "state": "Colorado",
+              "country": "United States",
+              "postcode": 66388,
+              "coordinates": {
+                  "latitude": "27.2043",
+                  "longitude": "-109.2802"
+              },
+              "timezone": {
+                  "offset": "+9:30",
+                  "description": "Adelaide, Darwin"
+              }
+          },
+          "email": "ramon.edwards@example.com",
+          "picture": {
+              "large": "https://randomuser.me/api/portraits/men/81.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/81.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/81.jpg"
+          }
+      },
+      {
+          "name": {
+              "title": "Mrs",
+              "first": "Terry",
+              "last": "Evans"
+          },
+          "location": {
+              "street": {
+                  "number": 4739,
+                  "name": "E Sandy Lake Rd"
+              },
+              "city": "Vallejo",
+              "state": "Kansas",
+              "country": "United States",
+              "postcode": 27925,
+              "coordinates": {
+                  "latitude": "-79.6517",
+                  "longitude": "-57.0438"
+              },
+              "timezone": {
+                  "offset": "+5:45",
+                  "description": "Kathmandu"
+              }
+          },
+          "email": "terry.evans@example.com",
+          "picture": {
+              "large": "https://randomuser.me/api/portraits/women/68.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/women/68.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/women/68.jpg"
+          }
+      },
+      {
+          "name": {
+              "title": "Miss",
+              "first": "Natalie",
+              "last": "Wheeler"
+          },
+          "location": {
+              "street": {
+                  "number": 201,
+                  "name": "Westheimer Rd"
+              },
+              "city": "Simi Valley",
+              "state": "West Virginia",
+              "country": "United States",
+              "postcode": 67032,
+              "coordinates": {
+                  "latitude": "56.2794",
+                  "longitude": "18.6106"
+              },
+              "timezone": {
+                  "offset": "-1:00",
+                  "description": "Azores, Cape Verde Islands"
+              }
+          },
+          "email": "natalie.wheeler@example.com",
+          "picture": {
+              "large": "https://randomuser.me/api/portraits/women/27.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/women/27.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/women/27.jpg"
+          }
+      }
+  ],
+  "info": {
+      "seed": "29d404f0d0d4f3d4",
+      "results": 5,
+      "page": 1,
+      "version": "1.3"
+  }
+}
