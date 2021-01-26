@@ -1,5 +1,8 @@
+import { Container } from '@material-ui/core';
 import React, { Component } from 'react';
-import API from '../utils';
+import API from '../utils/API';
+import HeaderSection from '../components/HeaderSection';
+import TableSection from '../components/TableSection';
 
 class Directory extends Component {
   componentDidMount () {
@@ -11,7 +14,10 @@ class Directory extends Component {
   render () {
     return (
       <div>
-        <p>data</p>
+        <Container>
+          <HeaderSection />
+          <TableSection />
+        </Container>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Directory from './pages';
+import Directory from './pages/Directory.js';
 
 function App () {
   return (
