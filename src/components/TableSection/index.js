@@ -2,6 +2,7 @@ import { React } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
+import TablePic from '../TablePic';
 import users from '../../db/randomUsers.json';
 
 const useStyles = makeStyles({
@@ -42,12 +43,11 @@ export default function TableSection (props) {
           {rows.map((row) => (
             <TableRow key={row.email}>
               <TableCell component='th' scope='row'>
-                {row.pic}
+                <TablePic pic={row.pic} />
               </TableCell>
               <TableCell>{row.fullname}</TableCell>
               <TableCell>{row.location}</TableCell>
               <TableCell>{row.email}</TableCell>
-              {console.log(row.fullname)}
             </TableRow>
           ))}
         </TableBody>
