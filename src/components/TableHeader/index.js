@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-export default function TableHeader (props) {
+export default function TableHeader () {
   return (<div>
-    <p>Table Header {props.gato}</p>
+    <p>Table Header</p>
   </div>
   )
 }

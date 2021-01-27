@@ -1,10 +1,7 @@
-import { Container } from '@material-ui/core';
 import React from 'react';
 // import API from '../utils/API';
 import TableWrapper from '../components/TableWrapper';
 import users from '../db/randomUsers.json';
-
-// const cat = 'fluffy';
 
 class Directory extends React.Component {
 
@@ -23,18 +20,16 @@ class Directory extends React.Component {
           thumbnail: pic
         }
       } = item;
-      arr.push({ pic, fname, lname, email, currentCity, currentState });
+      const key = email;
+      arr.push({key, pic, fname, lname, email, currentCity, currentState });
     })
     this.setState({ data: arr })
   }
 
-
   render () {
     return (
       <div>
-        <Container>
-          <TableWrapper />
-        </Container>
+          <TableWrapper {...[this.state]}/>
       </div>
     );
   }
