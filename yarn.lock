@@ -11183,7 +11183,7 @@ semistandard-prettier-eslint@*:
     semistandard "*"
     standard-cliengine "1.x.x"
 
-semistandard@*, semistandard@^16.0.0:
+semistandard@*:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/semistandard/-/semistandard-16.0.0.tgz#6ed546dcccd6555a9a87dbeff6a6e53ab250479f"
   integrity sha512-pLETGjFyl0ETMDAEZxkC1OJBmNmPIMpMkayStGTgHMMh/5FM7Rbk5NWc1t7yfQ4PrRURQH8MUg3ZxvojJJifcw==

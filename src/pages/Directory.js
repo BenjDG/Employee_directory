@@ -1,22 +1,39 @@
 import { Container } from '@material-ui/core';
-import React, { Component } from 'react';
+import React from 'react';
 // import API from '../utils/API';
-import HeaderSection from '../components/HeaderSection';
-import TableSection from '../components/TableSection';
+import TableWrapper from '../components/TableWrapper';
+import users from '../db/randomUsers.json';
 
-class Directory extends Component {
-  // componentDidMount () {
-  //   API.GetRandomPerson()
-  //     .then(res => console.log(res))
-  //     .catch(err => console.log(err));
-  // }
+// const cat = 'fluffy';
+
+class Directory extends React.Component {
+
+  state = {
+    data: []
+  };
+
+  componentDidMount () {
+    const arr = [];
+    users.results.forEach(item => {
+      const {
+        email,
+        location: { city: currentCity, state: currentState },
+        name: { first: fname, last: lname },
+        picture: {
+          thumbnail: pic
+        }
+      } = item;
+      arr.push({ pic, fname, lname, email, currentCity, currentState });
+    })
+    this.setState({ data: arr })
+  }
+
 
   render () {
     return (
       <div>
         <Container>
-          <HeaderSection />
-          <TableSection />
+          <TableWrapper />
         </Container>
       </div>
     );

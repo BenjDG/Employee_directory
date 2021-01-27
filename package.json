@@ -18,9 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false --passWithNoTests && yarn run lint",
-    "eject": "react-scripts eject",
-    "lint": "semistandard --verbose | snazzy"
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -42,13 +41,6 @@
   },
   "devDependencies": {
     "prettier-semi-cli": "^1.0.0",
-    "semistandard": "^16.0.0",
     "snazzy": "^9.0.0"
-  },
-  "semistandard": {
-    "ignore": [
-      "/public",
-      "/src"
-    ]
   }
 }

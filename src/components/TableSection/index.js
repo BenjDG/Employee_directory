@@ -3,27 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TablePic from '../TablePic';
-import users from '../../db/randomUsers.json';
+
 
 const useStyles = makeStyles({
   table: {
     minWidth: 650
   }
 });
-
-const rows =
-  users.results.map((item) => {
-    const {
-      email,
-      location: { city: location },
-      name: { first: fname, last: lname },
-      picture: { thumbnail: pic }
-    } = item;
-
-    const fullname = `${fname} ${lname}`;
-    const obj = { pic, fullname, location, email };
-    return obj;
-  });
 
 export default function TableSection (props) {
   const classes = useStyles();
@@ -39,8 +25,8 @@ export default function TableSection (props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {console.log(rows)}
-          {rows.map((row) => (
+          {console.log(props)}
+          {props.rows.map((row) => (
             <TableRow key={row.email}>
               <TableCell component='th' scope='row'>
                 <TablePic pic={row.pic} />
