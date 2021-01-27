@@ -7,13 +7,13 @@ export default function TableBodySection (props) {
     <div>
       <p>Table Body Section</p>
       {console.log(typeof props)}
-      {console.log(`Body=============${props.data}`)}
-      {console.dir(props[0].data)}
-      {
+      {console.log(`Body=============${props}`)}
+      {console.dir(props)}
+      {/* {
         props[0].data.map(() => {
           return <p>Teeeeeest</p>
         })
-      }
+      } */}
 
     </div>
   )

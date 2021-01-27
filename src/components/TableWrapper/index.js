@@ -7,8 +7,9 @@ export default function TableWrapper (props) {
   return (<div>
     <p>Table Wrapper</p>
     <TableHeader />
-    {console.log(typeof props)}
-      {console.log(`Wrapper=============${props}`)}
+    {console.log('Wrapper Type is: ' + typeof props)}
+    {console.log(`Wrapper=============${props}`)}
+{console.dir(props)}
     <TableBodySection {...props}/>
   </div>
   )
