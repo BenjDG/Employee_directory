@@ -3,16 +3,18 @@ import React from 'react';
 import TableWrapper from '../components/TableWrapper';
 import users from '../db/randomUsers.json';
 import HeaderSection from '../components/HeaderSection'
+import Sort from '../utils/Sort.js'
 
 let dataList = [];
+let toggle = true;
 class Directory extends React.Component {
-    state = {
-      data: []
-    };
+  state = {
+    data: []
+  };
 
 
 
-componentDidMount () {
+  componentDidMount () {
     const arr = [];
     users.results.forEach(item => {
       const {
@@ -27,51 +29,57 @@ componentDidMount () {
       arr.push({ key, pic, fname, lname, email, currentCity, currentState });
     })
     dataList = arr;
-    this.setState({ data: arr })
+    this.setState({ data: arr });
   }
 
-  sortFnameAsc = () => {
-    dataList.sort(function(a,b) {
-      const alphaA = a.fname.toLowerCase();
-      const alphaB = b.fname.toLowerCase();
-      if (alphaA < alphaB) {
-        return -1;
-      }
-      if (alphaA > alphaB) {
-        return 1;
-      }
-      return 0;
-    })
-    this.setState({ data: dataList });
+sortData = () => {
+  if (toggle) {
+    this.setState({ data: Sort.LnameAsc(dataList) });
+    toggle = false;
+  } else {
+    this.setState({ data: Sort.FnameDsc(dataList) });
+    toggle = true;
   }
+}
 
-  sortFnameDes = () => {
-    dataList.sort(function(a,b) {
-      const alphaA = a.fname.toLowerCase();
-      const alphaB = b.fname.toLowerCase();
-      if (alphaA < alphaB) {
-        return 1;
-      }
-      if (alphaA > alphaB) {
-        return -1;
-      }
-      return 0;
-    })
-    this.setState({ data: dataList });
-  }
+// sortFnameAsc = () => {
+//   dataList.sort(function(a,b) {
+//     const alphaA = a.fname.toLowerCase();
+//     const alphaB = b.fname.toLowerCase();
+//     if (alphaA < alphaB) {
+//       return -1;
+//     }
+//     if (alphaA > alphaB) {
+//       return 1;
+//     }
+//     return 0;
+//   })
+//   this.setState({ data: dataList });
+// }
 
+// sortFnameDes = () => {
+//   dataList.sort(function (a, b) {
+//     const alphaA = a.fname.toLowerCase();
+//     const alphaB = b.fname.toLowerCase();
+//     if (alphaA < alphaB) {
+//       return 1;
+//     }
+//     if (alphaA > alphaB) {
+//       return -1;
+//     }
+//     return 0;
+//   })
+//   this.setState({ data: dataList });
+// }
 
-
-  render () {
-    return (
-      <div>
-        <button onClick={this.sortFnameAsc}>Click Asc</button>
-        <button onClick={this.sortFnameDes}>Click Des</button>
-        <HeaderSection />
-        <TableWrapper {...[this.state]} />
-      </div>
-    );
-  }
+render() {
+  return (
+    <div>
+      <HeaderSection />
+      <TableWrapper onClick={this.sortData} {...[this.state]} />
+    </div>
+  );
+}
 }
 
 export default Directory;

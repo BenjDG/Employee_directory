@@ -17,7 +17,7 @@ export default function TableWrapper (props) {
     <div>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="User Directory">
-          <MyTableHeader />
+          <MyTableHeader onClick={props.onClick} />
           <MyTableBody {...props} />
         </Table>
       </TableContainer>
