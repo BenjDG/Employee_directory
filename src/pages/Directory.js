@@ -2,14 +2,17 @@ import React from 'react';
 // import API from '../utils/API';
 import TableWrapper from '../components/TableWrapper';
 import users from '../db/randomUsers.json';
+import HeaderSection from '../components/HeaderSection'
 
+let dataList = [];
 class Directory extends React.Component {
+    state = {
+      data: []
+    };
 
-  state = {
-    data: []
-  };
 
-  componentDidMount () {
+
+componentDidMount () {
     const arr = [];
     users.results.forEach(item => {
       const {
@@ -21,15 +24,51 @@ class Directory extends React.Component {
         }
       } = item;
       const key = email;
-      arr.push({key, pic, fname, lname, email, currentCity, currentState });
+      arr.push({ key, pic, fname, lname, email, currentCity, currentState });
     })
+    dataList = arr;
     this.setState({ data: arr })
   }
+
+  sortFnameAsc = () => {
+    dataList.sort(function(a,b) {
+      const alphaA = a.fname.toLowerCase();
+      const alphaB = b.fname.toLowerCase();
+      if (alphaA < alphaB) {
+        return -1;
+      }
+      if (alphaA > alphaB) {
+        return 1;
+      }
+      return 0;
+    })
+    this.setState({ data: dataList });
+  }
+
+  sortFnameDes = () => {
+    dataList.sort(function(a,b) {
+      const alphaA = a.fname.toLowerCase();
+      const alphaB = b.fname.toLowerCase();
+      if (alphaA < alphaB) {
+        return 1;
+      }
+      if (alphaA > alphaB) {
+        return -1;
+      }
+      return 0;
+    })
+    this.setState({ data: dataList });
+  }
+
+
 
   render () {
     return (
       <div>
-          <TableWrapper {...[this.state]}/>
+        <button onClick={this.sortFnameAsc}>Click Asc</button>
+        <button onClick={this.sortFnameDes}>Click Des</button>
+        <HeaderSection />
+        <TableWrapper {...[this.state]} />
       </div>
     );
   }

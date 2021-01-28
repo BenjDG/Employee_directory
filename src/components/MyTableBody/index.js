@@ -4,12 +4,12 @@ import MyTableRow from '../MyTableRow';
 
 export default function MyTableBody (props) {
   return (
-    <TableBody>
+      <TableBody>
       {
         props[0].data.map((item) => {
           return <MyTableRow key={item.key} user={item} />
         })
       }
-    </TableBody>
+      </TableBody>
   )
 }

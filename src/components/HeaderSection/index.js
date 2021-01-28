@@ -1,9 +1,10 @@
+import { Paper } from '@material-ui/core';
 import React from 'react';
 
 export default function HeaderSection () {
   return (
-    <div>
+    <Paper>
       <h1>Employee Directory</h1>
-    </div>
+    </Paper>
   );
 }
