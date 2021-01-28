@@ -12,8 +12,6 @@ class Directory extends React.Component {
     data: []
   };
 
-
-
   componentDidMount () {
     const arr = [];
     users.results.forEach(item => {
@@ -31,7 +29,9 @@ class Directory extends React.Component {
     dataList = arr;
     this.setState({ data: arr });
   }
-
+//
+////////////////////////////////////////////////////////////////Write the rest of the sort functions
+/****************************************************************************************** */
 sortData = () => {
   if (toggle) {
     this.setState({ data: Sort.LnameAsc(dataList) });
