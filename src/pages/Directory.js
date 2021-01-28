@@ -29,8 +29,7 @@ class Directory extends React.Component {
   render () {
     return (
       <div>
-        {console.log("Directory type is: " + typeof this.state.data)}
-          <TableWrapper {...[this.state.data]}/>
+          <TableWrapper {...[this.state]}/>
       </div>
     );
   }

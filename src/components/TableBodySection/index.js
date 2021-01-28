@@ -1,20 +1,17 @@
 import React from 'react';
-// import TableRow from '../TableRow';
-
+import TableRow from '../TableRow';
 
 export default function TableBodySection (props) {
   return (
     <div>
-      <p>Table Body Section</p>
-      {console.log(typeof props)}
-      {console.log(`Body=============${props}`)}
-      {console.dir(props)}
-      {/* {
-        props[0].data.map(() => {
-          return <p>Teeeeeest</p>
+      {/* {console.log(typeof props[0].data)} */}
+      {console.dir(props[0].data)}
+      {
+        props[0].data.map((item) => {
+          console.log(item);
+          return <TableRow key={item.key} user={item} />
         })
-      } */}
-
+      }
     </div>
   )
 }
