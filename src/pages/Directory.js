@@ -10,7 +10,9 @@ let toggleFname = true;
 
 class Directory extends React.Component {
   state = {
-    data: []
+    search: "",
+    data: [],
+    error: ""
   };
   componentDidMount () {
     const arr = [];
@@ -29,6 +31,34 @@ class Directory extends React.Component {
     dataList = arr;
     this.setState({ data: arr });
   }
+// ###################################################### fix this search feature ###################
+  handleInputChange = event => {
+    const searchInput = event.target.value
+    // set search state
+    this.setState({ search: searchInput });
+
+    // filter each item in array
+    const result = this.state.data.filter((item) => {
+      let check = false;
+      // loop each object value
+      for (const str in item) {
+
+        // don't check these object keys
+        if (str !== 'pic' || str !== 'key') {
+
+          // if search string found return true
+          if (item[str].indexOf(searchInput) !== -1) {
+            console.log('found');
+            check = true;
+          } else { check = false; }
+        } else { check = false; }
+      }
+      return check;
+      // return Object.values(item).indexOf(searchInput) > -1;
+    });
+    this.setState({ data: result });
+  };
+
   sortData = (event) => {
     if (toggleFname) {
       this.setState({ data: Sort.asc(dataList, event.target.id) });
@@ -41,7 +71,7 @@ class Directory extends React.Component {
   render () {
     return (
       <div>
-        <HeaderSection />
+        <HeaderSection handleInputChange={this.handleInputChange} />
         <TableWrapper onClick={this.sortData} data={this.state.data} />
       </div>
     );
