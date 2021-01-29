@@ -14,7 +14,8 @@ class Directory extends React.Component {
     data: [],
     error: ""
   };
-  componentDidMount () {
+
+  hydrateData () {
     const arr = [];
     users.results.forEach(item => {
       const {
@@ -31,32 +32,32 @@ class Directory extends React.Component {
     dataList = arr;
     this.setState({ data: arr });
   }
-// ###################################################### fix this search feature ###################
+
+  componentDidMount () {
+    this.hydrateData();
+  }
+  // ###################################################### fix this search feature ###################
+
   handleInputChange = event => {
     const searchInput = event.target.value
     // set search state
     this.setState({ search: searchInput });
+  }
 
-    // filter each item in array
-    const result = this.state.data.filter((item) => {
-      let check = false;
-      // loop each object value
-      for (const str in item) {
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console.log('submit clicked');
 
-        // don't check these object keys
-        if (str !== 'pic' || str !== 'key') {
 
-          // if search string found return true
-          if (item[str].indexOf(searchInput) !== -1) {
-            console.log('found');
-            check = true;
-          } else { check = false; }
-        } else { check = false; }
-      }
-      return check;
-      // return Object.values(item).indexOf(searchInput) > -1;
-    });
-    this.setState({ data: result });
+  }
+
+
+  handleInputChange = event => {
+    const searchInput = event.target.value
+    // set search state
+    this.setState({ search: searchInput });
+    this.hydrateData();
+
   };
 
   sortData = (event) => {
@@ -71,7 +72,7 @@ class Directory extends React.Component {
   render () {
     return (
       <div>
-        <HeaderSection handleInputChange={this.handleInputChange} />
+        <HeaderSection handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
         <TableWrapper onClick={this.sortData} data={this.state.data} />
       </div>
     );
