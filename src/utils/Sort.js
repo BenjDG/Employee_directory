@@ -1,33 +1,27 @@
-
 const Sort = {
-  LnameAsc: function(arr) {
-    arr.sort(function(a,b) {
-      const alphaA = a.fname.toLowerCase();
-      const alphaB = b.fname.toLowerCase();
-      if (alphaA < alphaB) {
-        return -1;
-      }
-      if (alphaA > alphaB) {
-        return 1;
-      }
-      return 0;
+  asc: function (arr, event) {
+    const newArr = arr.map(function (element, i) {
+      return { index: i, value: element[event] };
+    });
+    newArr.sort(function (a, b) {
+      return +(a.value > b.value) || +(a.value === b.value) - 1;
     })
-    return arr;
+    const sortedArr = newArr.map(function (e) {
+      return arr[e.index];
+    });
+    return sortedArr;
   },
-  
-  FnameDsc: function(arr) {
-    arr.sort(function (a, b) {
-      const alphaA = a.fname.toLowerCase();
-      const alphaB = b.fname.toLowerCase();
-      if (alphaA < alphaB) {
-        return 1;
-      }
-      if (alphaA > alphaB) {
-        return -1;
-      }
-      return 0;
+  des: function (arr, event) {
+    const newArr = arr.map(function (element, i) {
+      return { index: i, value: element[event] };
+    });
+    newArr.sort(function (a, b) {
+      return +(a.value < b.value) || +(a.value === b.value) - 1;
     })
-    return arr;
+    const sortedArr = newArr.map(function (e) {
+      return arr[e.index];
+    });
+    return sortedArr;
   }
 }
 

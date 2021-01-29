@@ -2,7 +2,6 @@ import { TableCell, TableRow } from '@material-ui/core';
 import React from 'react';
 import TablePic from '../TablePic';
 
-
 export default function MyTableRow (props) {
   return (
     <TableRow key={props.email}>

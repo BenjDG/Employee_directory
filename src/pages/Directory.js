@@ -6,12 +6,12 @@ import HeaderSection from '../components/HeaderSection'
 import Sort from '../utils/Sort.js'
 
 let dataList = [];
-let toggle = true;
+let toggleFname = true;
+
 class Directory extends React.Component {
   state = {
     data: []
   };
-
   componentDidMount () {
     const arr = [];
     users.results.forEach(item => {
@@ -29,57 +29,23 @@ class Directory extends React.Component {
     dataList = arr;
     this.setState({ data: arr });
   }
-//
-////////////////////////////////////////////////////////////////Write the rest of the sort functions
-/****************************************************************************************** */
-sortData = () => {
-  if (toggle) {
-    this.setState({ data: Sort.LnameAsc(dataList) });
-    toggle = false;
-  } else {
-    this.setState({ data: Sort.FnameDsc(dataList) });
-    toggle = true;
+  sortData = (event) => {
+    if (toggleFname) {
+      this.setState({ data: Sort.asc(dataList, event.target.id) });
+      toggleFname = false;
+    } else {
+      this.setState({ data: Sort.des(dataList, event.target.id) });
+      toggleFname = true;
+    }
   }
-}
-
-// sortFnameAsc = () => {
-//   dataList.sort(function(a,b) {
-//     const alphaA = a.fname.toLowerCase();
-//     const alphaB = b.fname.toLowerCase();
-//     if (alphaA < alphaB) {
-//       return -1;
-//     }
-//     if (alphaA > alphaB) {
-//       return 1;
-//     }
-//     return 0;
-//   })
-//   this.setState({ data: dataList });
-// }
-
-// sortFnameDes = () => {
-//   dataList.sort(function (a, b) {
-//     const alphaA = a.fname.toLowerCase();
-//     const alphaB = b.fname.toLowerCase();
-//     if (alphaA < alphaB) {
-//       return 1;
-//     }
-//     if (alphaA > alphaB) {
-//       return -1;
-//     }
-//     return 0;
-//   })
-//   this.setState({ data: dataList });
-// }
-
-render() {
-  return (
-    <div>
-      <HeaderSection />
-      <TableWrapper onClick={this.sortData} {...[this.state]} />
-    </div>
-  );
-}
+  render () {
+    return (
+      <div>
+        <HeaderSection />
+        <TableWrapper onClick={this.sortData} data={this.state.data} />
+      </div>
+    );
+  }
 }
 
 export default Directory;
