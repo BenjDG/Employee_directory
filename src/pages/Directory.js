@@ -1,7 +1,7 @@
 import React from 'react';
-// import API from '../utils/API';
+import API from '../utils/API';
 import TableWrapper from '../components/TableWrapper';
-import users from '../db/randomUsers.json';
+// import users from '../db/randomUsers.json';
 import HeaderSection from '../components/HeaderSection'
 import Sort from '../utils/Sort.js'
 import Search from '../utils/Search.js';
@@ -19,7 +19,10 @@ class Directory extends React.Component {
 
   hydrateData () {
     const arr = [];
-    users.results.forEach(item => {
+    API.GetRandomPerson().then((users) => {
+    console.log('#######################');
+    console.log(users);
+    users.data.results.forEach(item => {
       const {
         email,
         location: { city: currentCity, state: currentState },
@@ -34,6 +37,7 @@ class Directory extends React.Component {
     dataList = arr;
     this.setState({ data: arr });
     this.setState({ searchResult: arr });
+  });
   }
 
   componentDidMount () {
