@@ -20,8 +20,6 @@ class Directory extends React.Component {
   hydrateData () {
     const arr = [];
     API.GetRandomPerson().then((users) => {
-    console.log('#######################');
-    console.log(users);
     users.data.results.forEach(item => {
       const {
         email,
