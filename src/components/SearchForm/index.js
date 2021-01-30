@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchForm ({handleInputChange, handleFormSubmit}) {
+export default function SearchForm ({handleInputChange, handleFormSubmit, value}) {
   const classes = useStyles();
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField onChange={handleInputChange} id="search" name="searchInput" label="Search" variant="outlined" />
+      <TextField id="search" value={value} onChange={handleInputChange} name="searchInput" label="Search" variant="outlined" />
       <button type="submit" onClick={handleFormSubmit} className="btn btn-success">Search</button>
     </form>
   )

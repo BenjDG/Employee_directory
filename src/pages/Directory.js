@@ -4,6 +4,7 @@ import TableWrapper from '../components/TableWrapper';
 import users from '../db/randomUsers.json';
 import HeaderSection from '../components/HeaderSection'
 import Sort from '../utils/Sort.js'
+import Search from '../utils/Search.js';
 
 let dataList = [];
 let toggleFname = true;
@@ -11,6 +12,7 @@ let toggleFname = true;
 class Directory extends React.Component {
   state = {
     search: "",
+    searchResult: [],
     data: [],
     error: ""
   };
@@ -46,19 +48,10 @@ class Directory extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log('submit clicked');
-
-
+    // input search
+    const result = Search(this.state.data, this.state.search)
+    this.setState({ searchResult: result})
   }
-
-
-  handleInputChange = event => {
-    const searchInput = event.target.value
-    // set search state
-    this.setState({ search: searchInput });
-    this.hydrateData();
-
-  };
 
   sortData = (event) => {
     if (toggleFname) {
@@ -73,7 +66,7 @@ class Directory extends React.Component {
     return (
       <div>
         <HeaderSection handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
-        <TableWrapper onClick={this.sortData} data={this.state.data} />
+        <TableWrapper onClick={this.sortData} data={this.state.data} value={this.state.search} />
       </div>
     );
   }
