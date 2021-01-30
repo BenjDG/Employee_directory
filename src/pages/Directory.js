@@ -55,10 +55,10 @@ class Directory extends React.Component {
 
   sortData = (event) => {
     if (toggleFname) {
-      this.setState({ data: Sort.asc(dataList, event.target.id) });
+      this.setState({ searchResult: Sort.asc(dataList, event.target.id) });
       toggleFname = false;
     } else {
-      this.setState({ data: Sort.des(dataList, event.target.id) });
+      this.setState({ searchResult: Sort.des(dataList, event.target.id) });
       toggleFname = true;
     }
   }

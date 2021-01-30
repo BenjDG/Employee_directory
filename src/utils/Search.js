@@ -4,7 +4,7 @@ const Search = function (personArray, toSearch) {
   console.log(`toSearchLower >> ${toSearchLower}`);
   for (let i = 0; i < personArray.length; i++) {
     for (let key in personArray[i]) {
-      if (personArray[i][key].indexOf(toSearchLower) !== -1) {
+      if (personArray[i][key].toLowerCase().indexOf(toSearchLower) !== -1) {
         console.log(`array[i][key] >> ${personArray[i][key]}`);
         results.push(personArray[i]);
       }
