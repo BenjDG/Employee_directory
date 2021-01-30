@@ -11,14 +11,14 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TableWrapper ({data, onClick}) {
+export default function TableWrapper ({searchResult, onClick}) {
   const classes = useStyles();
   return (
     <div>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="User Directory">
           <MyTableHeader onClick={onClick} />
-          <MyTableBody data={data} />
+          <MyTableBody searchResult={searchResult} />
         </Table>
       </TableContainer>
     </div>

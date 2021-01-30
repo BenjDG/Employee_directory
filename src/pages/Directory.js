@@ -33,12 +33,12 @@ class Directory extends React.Component {
     })
     dataList = arr;
     this.setState({ data: arr });
+    this.setState({ searchResult: arr });
   }
 
   componentDidMount () {
     this.hydrateData();
   }
-  // ###################################################### fix this search feature ###################
 
   handleInputChange = event => {
     const searchInput = event.target.value
@@ -66,7 +66,7 @@ class Directory extends React.Component {
     return (
       <div>
         <HeaderSection handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
-        <TableWrapper onClick={this.sortData} data={this.state.data} value={this.state.search} />
+        <TableWrapper onClick={this.sortData} searchResult={this.state.searchResult} value={this.state.search} />
       </div>
     );
   }
