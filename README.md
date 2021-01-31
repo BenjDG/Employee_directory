@@ -1,55 +1,68 @@
-# Unit 19 React Homework: Employee Directory
 
-## Overview
+# Employee Directory
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+![GNU GPLv3 license](https://img.shields.io/badge/license-GNU%20GPLv3-brightgreen)
 
-## User Story
+<br/>
 
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+An example employee directory that uses Reactjs.  You can sort the data alphabetically by column or you can use the search bar to find an employee.
 
-## Business Context
+<br/>
+<br/>
 
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+## Table of Contents
 
-## Acceptance Criteria
+* [Web Address](#Web-Address)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Questions](#Questions)
 
-Given a table of random users generated from the [Random User API](https://randomuser.me/), when the user loads the page, a table of employees should render. 
+<br/>
+<br/>
 
-The user should be able to:
+## Web Address
 
-  * Sort the table by at least one category
+You can view the website by going to: https://benjdg.github.io/user_directory/
 
-  * Filter the users by at least one property.
+<br/>
+<br/>
 
-## Commit Early and Often
+## Usage
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+Vist the webpage and use the search box or click on column headings to sort.
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+<br/>
+<br/>
 
-Follow these guidelines for committing:
 
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+## License
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
+<br/>
+<br/>
 
-* Test your application before you commit to ensure functionality at every step in the development process
+## Contributing
 
-* We would like you to have well over 200 commits by graduation, so commit early and often!
+Please open an issue on GitHub if you would like to contribute to the project.
 
-* Deploy this site to GitHub Pages using the [Create React App docs for deployment.](https://create-react-app.dev/docs/deployment/#github-pages)
+<br/>
+<br/>
 
-* **Important**: Be sure to push your codebase to GitHub and **NOT** your built and deployed code. Ensure this happens by following the above instructions and using the `gh-pages` branch to host the deployed application's code.
+## Tests
 
-## Submission on BCS
+No tests are availible.
 
-You are required to submit the following:
+<br/>
+<br/>
 
-* the URL to the deployed application
+## Questions  
 
-* the URL to the Github repository
+If you have questions about the project you can email me, or you can open an issue in the GitHub repository.
+
+My GitHub profile is [benjDG](https://github.com/benjDG)  
+  
+Email: bdgalloway85@gmail.com.  
