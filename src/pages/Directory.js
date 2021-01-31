@@ -5,6 +5,7 @@ import TableWrapper from '../components/TableWrapper';
 import HeaderSection from '../components/HeaderSection'
 import Sort from '../utils/Sort.js'
 import Search from '../utils/Search.js';
+import Grid from '@material-ui/core/Grid';
 
 let dataList = [];
 let toggleFname = true;
@@ -68,7 +69,9 @@ class Directory extends React.Component {
     return (
       <div>
         <HeaderSection handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit} />
+        <Grid>
         <TableWrapper onClick={this.sortData} searchResult={this.state.searchResult} value={this.state.search} />
+        </Grid>
       </div>
     );
   }
