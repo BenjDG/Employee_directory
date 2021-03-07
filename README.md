@@ -24,7 +24,7 @@ An example employee directory that uses Reactjs.  You can sort the data alphabet
 
 ## Web Address
 
-You can view the website by going to: https://benjdg.github.io/user_directory/
+You can view the website by going to: https://benjdg.github.io/Employee_directory
 
 <br/>
 <br/>
