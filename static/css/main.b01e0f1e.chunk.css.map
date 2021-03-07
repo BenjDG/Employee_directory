@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/HeaderSection/styles.css"],"names":[],"mappings":"AAAA,GACE,mBAAoB,CACpB,cACF","file":"main.b01e0f1e.chunk.css","sourcesContent":["h1 {\r\n  padding-bottom: 1rem;\r\n  font-size: 2rem;\r\n}"]}
